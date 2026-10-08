@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" contant="Coffee is a popular brewed beverage made from the roasted and ground seeds, called beans, of the tropical evergreen Coffee plant">
+  <meta name="keyword" contant="coffee, cold coffee, Coffee shop, Coffee near me, Specialty coffee, Cold brew">
+  <meta name="robots" contant="index, follow">
+  <meta name="google-site-verification" content="rUsbU1ST3uXae6mbNW74SwlFN-pgF8_E85pvcChW-BU" />
+  <title>Bean & Brew Coffee</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f8f1e7;
+      color: #3b2418;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      height: 75px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fffaf4;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #6f3e24;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #3b2418;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #9b5d35;
+    }
+
+    .order-btn {
+      text-decoration: none;
+      color: white;
+      background: #6f3e24;
+      padding: 11px 20px;
+      border-radius: 25px;
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      margin: 30px 7%;
+      min-height: 410px;
+      padding: 60px;
+      border-radius: 25px;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(48, 25, 15, 0.95),
+          rgba(48, 25, 15, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=80");
+
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .banner-content {
+      max-width: 600px;
+    }
+
+    .banner h1 {
+      font-size: 55px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .banner p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      color: #f4e5d5;
+    }
+
+    .banner-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #c88a55;
+      color: white;
+      padding: 14px 27px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .banner-btn:hover {
+      background: #a96c3d;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products-section {
+      padding: 30px 7% 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #806858;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: #fffaf4;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(72, 42, 25, 0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .product-image {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .card:hover .product-image img {
+      transform: scale(1.08);
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #806858;
+      line-height: 1.5;
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price {
+      font-size: 21px;
+      font-weight: bold;
+      color: #6f3e24;
+    }
+
+    .buy-btn {
+      border: none;
+      background: #6f3e24;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background: #9b5d35;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+
+      header {
+        padding: 0 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .banner {
+        margin: 20px 5%;
+        padding: 35px 25px;
+        min-height: 350px;
+      }
+
+      .banner h1 {
+        font-size: 39px;
+      }
+
+      .banner p {
+        font-size: 16px;
+      }
+
+      .products-section {
+        padding: 20px 5% 50px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">☕ Bean & Brew</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <a href="#" class="order-btn">Order Now</a>
+  </header>
+
+
+  <!-- COFFEE BANNER -->
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Fresh Coffee, Made With Love</h1>
+
+      <p>
+        Start your day with the rich aroma and delicious taste
+        of freshly brewed premium coffee.
+      </p>
+
+      <a href="#" class="banner-btn">Explore Coffee ☕</a>
+    </div>
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+
+    <div class="section-title">
+      <h2>Our Popular Coffee</h2>
+      <p>Freshly brewed just for you</p>
+    </div>
+
+    <div class="products">
+
+      <!-- PRODUCT 1 -->
+      <div class="card">
+
+        <div class="product-image">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80"
+            alt="Cappuccino">
+        </div>
+
+        <div class="card-content">
+          <h3>Classic Cappuccino</h3>
+
+          <p>
+            Rich espresso topped with creamy steamed milk and
+            soft foam.
+          </p>
+
+          <div class="bottom">
+            <span class="price">$4.50</span>
+            <button class="buy-btn">Order</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 2 -->
+      <div class="card">
+
+        <div class="product-image">
+          <img
+            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"
+            alt="Latte">
+        </div>
+
+        <div class="card-content">
+          <h3>Caramel Latte</h3>
+
+          <p>
+            Smooth espresso blended with warm milk and sweet
+            caramel flavor.
+          </p>
+
+          <div class="bottom">
+            <span class="price">$5.00</span>
+            <button class="buy-btn">Order</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+      <div class="card">
+
+        <div class="product-image">
+          <img
+            src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=700&q=80"
+            alt="Americano">
+        </div>
+
+        <div class="card-content">
+          <h3>Classic Americano</h3>
+
+          <p>
+            Bold espresso combined with hot water for a smooth,
+            strong coffee.
+          </p>
+
+          <div class="bottom">
+            <span class="price">$3.50</span>
+            <button class="buy-btn">Order</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
